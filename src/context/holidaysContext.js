@@ -12,7 +12,7 @@ export const HolidaysContextProvider = ({ children }) => {
     }
 
     return (
-        <holidaysContext.Provider value={{ holidays, holiday, setHoliday }}>
+        <holidaysContext.Provider value={{ holiday, holidays, changeHoliday }}>
             {children}
         </holidaysContext.Provider>
     )
