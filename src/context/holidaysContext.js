@@ -5,7 +5,7 @@ import { useHolidays } from "../hooks/useHolidays";
 export const holidaysContext = createContext({});
 
 export const HolidaysContextProvider = ({ children }) => {
-    const [holiday, setHoliday] = useState('Выбрать праздник');
+    const [holiday, setHoliday] = useState('');
     const [holidays] = useHolidays();
     const changeHoliday = title => {
         setHoliday(title);

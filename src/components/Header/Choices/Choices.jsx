@@ -17,7 +17,9 @@ const Choices = () => {
 
     return (
         <div className={style.wrapper}>
-            <button className={style.button} onClick={toggleChoices}>{holiday}</button>
+            <button className={style.button} onClick={toggleChoices}>
+                {holidays[holiday] || 'Выбрать праздник'}
+            </button>
             {IsOpenChoices && (
                 <ul className={style.list}>
                     {Object.entries(holidays).map(item => (
@@ -25,7 +27,7 @@ const Choices = () => {
                             className={style.item}
                             key={item[0]}
                             onClick={() => {
-                                changeHoliday(item[1])
+                                changeHoliday(item[0])
                                 toggleChoices()
                             }}
                         >
