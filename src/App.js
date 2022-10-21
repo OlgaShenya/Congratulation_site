@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import Card from './components/Card/Card';
+import { TextContext } from './context/TextContext';
+import { ImgContextProvider } from './context/ImgContext';
+import { HolidaysContextProvider } from './context/holidaysContext';
 
-function App() {
+const wrapper = {
+  display: 'flex',
+  flexDirection: 'column',
+  hight: '100vh',
+}
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div style={wrapper}>
+      <HolidaysContextProvider>
+        <ImgContextProvider>
+          <TextContext>
+            <Header />
+            <Card />
+            <Footer />
+          </TextContext>
+        </ImgContextProvider>
+      </HolidaysContextProvider>
+    </div >
   );
 }
 
