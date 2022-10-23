@@ -8,9 +8,6 @@ const Choices = () => {
     const [IsOpenChoices, setIsOpenChoices] = useState(false)
     const { holiday, holidays, changeHoliday } = useContext(holidaysContext);
 
-
-
-
     const toggleChoices = () => {
         setIsOpenChoices(!IsOpenChoices)
     };
